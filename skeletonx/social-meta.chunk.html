@@ -1,0 +1,27 @@
+	[[- Social Meta Tags
+	Validators:
+		http://www.google.com/webmasters/tools/richsnippets
+		https://developers.facebook.com/tools/debug
+		https://dev.twitter.com/docs/cards/validation/validator
+
+		REQIUREMENTS in document:
+		[[*img]], [[*introtext]]
+	]]
+	<!-- Schema -->
+	<link rel="publisher" 			href="[[++gplus]]" />
+	<meta itemprop="url" 			content="[[~[[*id]]?&scheme=`full`]]">
+	<meta itemprop="name headline" 	content="[[*longtitle:default=`[[*pagetitle]]`]]">
+	<meta itemprop="description" 	content="[[*description:default=`[[*introtext]]`]]">
+	<meta itemprop="image" 			content="[[!++base_href]][[*img]]">
+	<!-- Twitter -->
+	<meta name="twitter:card" 			content="summary_large_image">
+	<meta name="twitter:title" 			content="[[*longtitle:default=`[[*pagetitle]]`]]">
+	<meta name="twitter:description" 	content="[[*description:default=`[[*introtext]]`]]">
+	<meta name="twitter:image:src" 		content="[[!++base_href]][[*img]]">
+	<!-- Facebook -->
+	<meta property="og:type"			content="website" /> 
+	<meta property="og:site_name"		content="[[++site_name]]"/>
+	<meta property="og:url"				content="[[~[[*id]]?&scheme=`full`]]" /> 
+	<meta property="og:image"			content="[[!++base_href]][[*img]]" />
+	<meta property="og:title"			content="[[*longtitle:default=`[[*pagetitle]]`]]" />
+	<meta property="og:description"		content="[[*description:default=`[[*introtext]]`]]" />
