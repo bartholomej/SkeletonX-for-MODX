@@ -1,6 +1,12 @@
+build.config.php
 _build/build.config.php
 config.core.php
 .idea
 .settings
 nbproject
 .project
+_packages/*.*
+!_packages/.gitignore
+!_packages/*.zip
+assets/components/mostreadarticles/cache
+_build/gpm_resolvers/
