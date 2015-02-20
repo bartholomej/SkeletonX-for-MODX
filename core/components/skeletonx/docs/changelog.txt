@@ -1,0 +1,3 @@
+SkeletonX 1.0.0 pl
+==============
+- GPM release

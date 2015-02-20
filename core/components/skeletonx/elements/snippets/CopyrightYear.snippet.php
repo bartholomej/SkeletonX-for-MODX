@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * CopyrightYear: get years to copyright footer
  *

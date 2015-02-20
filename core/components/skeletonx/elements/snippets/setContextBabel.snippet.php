@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * setContextBabel (experimental)
  *

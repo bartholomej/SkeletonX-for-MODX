@@ -1,0 +1,64 @@
+{
+    "name": "SkeletonX",
+    "lowCaseName": "skeletonx",
+    "description": "Basic HTML boilerplate for MODx Revolution",
+    "author": "Bartholomej",
+    "version": "1.0.0",
+    "package":{
+        "actions": [{
+            "id": 1
+            ,"controller": "index"
+        }],
+        "elements": {
+            "chunks": [{
+                "name": "analytics",
+                "file": "analytics.chunk.html"                
+            },{
+                "name": "bodyHead",
+                "file": "bodyHead.chunk.html"
+            },{
+                "name": "footer",
+                "file": "footer.chunk.html"
+            },{
+                "name": "htmlHead",
+                "file": "htmlHead.chunk.html"
+            },{
+                "name": "jsDefault",
+                "file": "jsDefault.chunk.html"
+            },{
+                "name": "jsFooter",
+                "file": "jsFooter.chunk.html"
+            },{
+                "name": "nav",
+                "file": "nav.chunk.html"
+            },{
+                "name": "nav.item",
+                "file": "nav.item.chunk.html"
+            },{
+                "name": "nav-mobile",
+                "file": "nav-mobile.chunk.html"
+            },{
+                "name": "social-meta",
+                "file": "social-meta.chunk.html"
+            }],
+            "snippets": [{
+                "name": "CopyrightYear",
+                "file": "CopyrightYear.snippet.php"
+            },{
+                "name": "getActiveClass",
+                "file": "getActiveClass.snippet.php"
+            },{
+                "name": "setContextBabel",
+                "file": "setContextBabel.snippet.php"
+            }],
+            "templates": [{
+                "name": "BasicTemplate",
+                "file": "BasicTemplate.template.html"
+            },{
+                "name": "debug",
+                "file": "debug.template.html"
+            }]
+        }
+    },
+    "extensionPackage": {}
+}
