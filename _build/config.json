@@ -48,8 +48,8 @@
                 "name": "getActiveClass",
                 "file": "getActiveClass.snippet.php"
             },{
-                "name": "setContextBabel",
-                "file": "setContextBabel.snippet.php"
+                "name": "setupBabel",
+                "file": "setupBabel.snippet.php"
             }],
             "templates": [{
                 "name": "BasicTemplate",

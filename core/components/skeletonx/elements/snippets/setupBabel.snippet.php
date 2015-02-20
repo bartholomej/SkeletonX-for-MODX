@@ -1,6 +1,6 @@
 <?php
 /**
- * setContextBabel (experimental)
+ * setupBabel (experimental)
  *
  * DESCRIPTION
  * Automatically set context settings for Babel, create gateway plugin and generate .htaccess code ;)
