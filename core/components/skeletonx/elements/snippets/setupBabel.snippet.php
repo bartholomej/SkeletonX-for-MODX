@@ -21,17 +21,17 @@
     $site_url = $modx->getOption('site_url');
     $site_start = $modx->getOption('site_start');
     $ctx = $modx->getCollection('modContext', array('key:NOT IN' => array('mgr')));
-    
-    $contexts = array();    
+
+    $contexts = array();
     foreach ($ctx as $context) {
         $contexts[] = $context->get('key');
-    }    
+    }
 
     if (count($contexts) <= 1) {
         echo "WARNING: You have only one context. Create more contexts first!";
         exit;
-    }    
-    
+    }
+
     // Building and saving context settings (not rewrite if already exist)
     function buildContextSettings($modx, $contexts, $site_url, $site_start) {
         $settings = array();
@@ -42,15 +42,15 @@
             $settings[] = array ('key' => 'site_start', 'value' => $site_start,            'context_key' => $context,);
             $settings[] = array ('key' => 'site_url',   'value' => $site_url . $postfix,   'context_key' => $context,);
         }
-            
-        foreach($settings as $val){    
+
+        foreach($settings as $val){
             $setContext = $modx->newObject('modContextSetting');
             $setContext->fromArray($val, '', true);
             $setContext->set('xtype', 'textfield');
             $setContext->set('namespace', 'core');
             $setContext->set('area', 'language');
-            
-            if (!$setContext->save()) {            
+
+            if (!$setContext->save()) {
                 $errContextSettings[] = $val;
             }
         }
@@ -58,38 +58,38 @@
         if ($errContextSettings) {
             ob_start();
             var_dump($errContextSettings);
-            $ctxSettingsOutput = '<h3>WARNING: These context settings already exist:</h3>' . ob_get_clean();            
+            $ctxSettingsOutput = '<h3>WARNING: These context settings already exist:</h3>' . ob_get_clean();
         } else {
             $ctxSettingsOutput = '<h3>Babel settings successfully created for all contexts...</h3>';
         }
         return $ctxSettingsOutput;
-    }        
-    
+    }
+
 
     // Building gateway plugin
     function buildGatewayCode($contexts) {
         $gateway = '
             /* SkeletonX generated gateway plugin for babel: https://github.com/bartholomej/SkeletonX-for-MODX */
-        if ($modx->context->get(\'key\') != "mgr") { 
-            switch($_REQUEST[\'cultureKey\']) { 
+        if ($modx->context->get(\'key\') != "mgr") {
+            switch($_REQUEST[\'cultureKey\']) {
         ';
-            
+
         foreach ($contexts as $context) {
             if ($context != 'web') {
                 $gateway .= '
                 case \''.$context.'\':
                     $modx->switchContext(\''.$context.'\');
-                    break;   
+                    break;
                 ';
             }
-        } 
+        }
 
         $gateway .= '
                 default:
                     /* Set the default context here */
                     $modx->switchContext(\'web\');
                     break;
-                    
+
             }
             /* unset GET var to avoid appending cultureKey=xy to URLs by other components */
             unset($_GET[\'cultureKey\']);
@@ -109,20 +109,20 @@
             RewriteCond %{REQUEST_FILENAME} !-d
             RewriteCond %{REQUEST_FILENAME} !-f
             RewriteRule ^('. $contextKeys .')/favicon.ico$ favicon.ico [L,QSA]
-               
+
             # redirect all requests to /XX/assets* to /assets*
             RewriteCond %{REQUEST_FILENAME} !-d
             RewriteCond %{REQUEST_FILENAME} !-f
             RewriteRule ^('. $contextKeys .')/assets(.*)$ assets$2 [L,QSA]
-              
-            # redirect all other requests to /XX/* 
+
+            # redirect all other requests to /XX/*
             # to index.php and set the cultureKey parameter
             RewriteCond %{REQUEST_FILENAME} !-f
             RewriteCond %{REQUEST_FILENAME} !-d
             RewriteRule ^('. $contextKeys .')?/?(.*)$ index.php?cultureKey=$1&q=$2 [L,QSA]
         ');
         return $htaccess;
-    }    
+    }
 
     function createGateway($modx, $contexts) {
         $plugin = $modx->newObject('modPlugin');
@@ -139,20 +139,20 @@
         $plugin->addMany($events);
         $modx->log(xPDO::LOG_LEVEL_INFO,'Packaged in '. count($events) .' Plugin Events.'); flush();
         unset($events);
-        
+
         if ($plugin->save()) {
             $pluginOutput = '<h3>Plugin gateway was successfully created!</h3><code>' . nl2br(buildGatewayCode($contexts)) . '</code>';
         } else {
             $pluginOutput = '<h3>WARNING: Plugin "gateway" already exist!</h3>';
         }
         return $pluginOutput;
-    }        
+    }
 
     // Step 1
     $output = '<h1>Setting up Babel and have a website with multiple languages</h1>
-               <h2>Step #1 - Automatically generated</h2>';    
+               <h2>Step #1 - Automatically generated</h2>';
     $output .= buildContextSettings($modx, $contexts, $site_url, $site_start);
-    $output .= createGateway($modx, $contexts); 
+    $output .= createGateway($modx, $contexts);
 
     // Step 2
     $output .= '<h2>Step #2 - Setting up .htaccess</h2>
@@ -160,13 +160,13 @@
     $output .= '<textarea rows="25" cols="150">';
     $output .= buildHtaccessCode($contexts);
     $output .= '</textarea><br />';
-    
+
     // Step 3
-    $output .= '<h2>Step #3 - Installing Babel</h2>'; 
+    $output .= '<h2>Step #3 - Installing Babel</h2>';
     $output .= 'Almost there! We now can install the Babel package from package manager.<br /><br />
                 Now you should remove this snippet call!<br /><br />
-                Based on this great manual: http://designfromwithin.com/blog-webdesign-development/2012/01/12/modx-multilingual-setting-up-babel-and-have-a-website-with-multible-languages/                  
-                      ';                          
+                Based on this great manual: http://designfromwithin.com/blog-webdesign-development/2012/01/12/modx-multilingual-setting-up-babel-and-have-a-website-with-multible-languages/
+                      ';
 
     // Clear context cache // TODO
     $cacheRefreshOptions =  array( 'context_settings' => array('contexts' => array($contexts) ));
