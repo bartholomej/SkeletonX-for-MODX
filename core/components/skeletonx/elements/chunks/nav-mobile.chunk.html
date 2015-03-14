@@ -1,21 +1,37 @@
 <div class="off-canvas-wrap" data-offcanvas>
-  <div class="inner-wrap">
-    <nav class="tab-bar show-for-small-only">
-      <section class="left-small">
-        <a class="left-off-canvas-toggle menu-icon"><span></span></a>
-      </section>
+    <div class="inner-wrap">
+        <nav class="tab-bar show-for-small-only">
+            <section class="left-small">
+                <a class="left-off-canvas-toggle menu-icon"><span></span></a>
+            </section>
 
-      <section class="middle tab-bar-section">
-        <h3 class="title"><a href="./">[[*pagetitle]]</a></h3>
-      </section>
-    </nav>
+            <section class="middle tab-bar-section">
+                <h3 class="title"><a href="./">[[*pagetitle]]</a></h3>
+            </section>
+        </nav>
 
     <aside class="left-off-canvas-menu show-for-small-only">
-
-    <!-- <span class="text-center"><a href="./">[[++site_name]]</a></span> -->
-
-       [[- <!--Here you can call some getResources/wayfinder to place menu items --> ]]
-
+        <ul class="off-canvas-list">
+            <li><label>[[++site_name]]</label></li>
+            <li class="has-submenu"><a href="#">Languages</a>
+                <ul class="left-submenu">
+                    <li class="back"><a href="#">Back</a></li>
+                    <li><label>Languages</label></li>
+                    [[BabelLinks? 
+                        &tpl=`babelLinks.item`
+                        &showCurrent=`1`
+                    ]]
+                </ul>
+            </li>    
+            [[getResources?
+               &tpl=`nav.item`
+               &context=`[[*context_key]]`
+               &sortby=`{"menuindex":"ASC"}`
+               &depth=`0`
+               &limit=`10`
+               &parents=`0`
+            ]]                
+        </ul>
     </aside>
 
     <section class="main-section">
