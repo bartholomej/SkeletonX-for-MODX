@@ -10,36 +10,54 @@
             ,"controller": "index"
         }],
         "elements": {
+            "categories": [{
+                    "name": "Base"
+                },{
+                    "name": "Navigation"
+                },{
+                    "name": "Utils"
+                },{
+                    "name": "Forms"
+                },{
+                    "name": "System"
+                }
+            ],
             "chunks": [{
                 "name": "analytics",
-                "file": "analytics.chunk.html"                
+                "file": "analytics.chunk.html",
+                "category" : "Utils"
             },{
-                "name": "bodyHead",
-                "file": "bodyHead.chunk.html"
+                "name": "header",
+                "file": "header.chunk.html",
+                "category" : "Base"
             },{
                 "name": "footer",
-                "file": "footer.chunk.html"
+                "file": "footer.chunk.html",
+                "category" : "Base"
             },{
-                "name": "htmlHead",
-                "file": "htmlHead.chunk.html"
+                "name": "html_head",
+                "file": "html_head.chunk.html",
+                "category" : "Base"
             },{
-                "name": "jsDefault",
-                "file": "jsDefault.chunk.html"
-            },{
-                "name": "jsFooter",
-                "file": "jsFooter.chunk.html"
+                "name": "scripts",
+                "file": "scripts.chunk.html",
+                "category" : "Base"
             },{
                 "name": "nav",
-                "file": "nav.chunk.html"
+                "file": "nav.chunk.html",
+                "category" : "Navigation"
             },{
                 "name": "nav.item",
-                "file": "nav.item.chunk.html"
+                "file": "nav.item.chunk.html",
+                "category" : "Navigation"
             },{
                 "name": "nav-mobile",
-                "file": "nav-mobile.chunk.html"
+                "file": "nav-mobile.chunk.html",
+                "category" : "Navigation"
             },{
                 "name": "social-meta",
-                "file": "social-meta.chunk.html"
+                "file": "social-meta.chunk.html",
+                "category" : "Utils"
             }],
             "snippets": [{
                 "name": "CopyrightYear",
@@ -56,7 +74,8 @@
                 "file": "BasicTemplate.template.html"
             },{
                 "name": "debug",
-                "file": "debug.template.html"
+                "file": "debug.template.html",
+                "category" : "System"
             }]
         }
     },
