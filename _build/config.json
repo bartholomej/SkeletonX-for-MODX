@@ -100,10 +100,17 @@
             "hidemenu": 1
         },{
             "pagetitle": "Error 404 - Not Found",
-            "template": "Error",        
+            "template": "Error",
             "alias": "404-page-not-found",            
             "published": 1,
             "hidemenu": 1
+        },{
+            "pagetitle": "robots.txt",                        
+            "alias": "robots",
+            "file": "robots.txt.html",
+            "content_type": "text",            
+            "richtext": 0,
+            "published": 1            
         }]
     },
     "extensionPackage": {}
