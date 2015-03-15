@@ -110,12 +110,23 @@
             "published": 1,
             "hidemenu": 1
         },{
-            "pagetitle": "robots.txt",                        
+            "pagetitle": "robots.txt",
+            "template": 0,
             "alias": "robots",
             "file": "robots.txt.html",
             "content_type": "text",            
             "richtext": 0,
-            "published": 1            
+            "published": 1,
+            "hidemenu": 1
+        },{
+            "pagetitle": "humans.txt",
+            "template": 0,
+            "alias": "humans",
+            "file": "humans.txt.html",
+            "content_type": "text",            
+            "richtext": 0,
+            "published": 0,
+            "hidemenu": 1            
         }],
         "systemSettings": [{
             "key": "site_production",
