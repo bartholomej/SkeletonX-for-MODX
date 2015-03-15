@@ -9,7 +9,7 @@
             "id": 1
             ,"controller": "index"
         }],
-        "elements": {
+        "elements": {                    
             "categories": [{
                     "name": "Base"
                 },{
@@ -58,6 +58,10 @@
                 "name": "social-meta",
                 "file": "social-meta.chunk.html",
                 "category" : "Utils"
+            },{
+                "name": "feed.item",
+                "file": "feed.item.chunk.html",
+                "category" : "Utils"
             }],
             "snippets": [{
                 "name": "CopyrightYear",
@@ -76,8 +80,21 @@
                 "name": "debug",
                 "file": "debug.template.html",
                 "category" : "System"
-            }]
-        }
+            },{
+                "name": "Feed",
+                "file": "Feed.template.html",
+                "category" : "System"
+            }]            
+        },
+        "resources": [{
+            "pagetitle": "RSS Feed",
+            "template": "Feed",
+            "richtext": 0,
+            "alias": "rss",
+            "content_type": "XML",
+            "published": 0,
+            "hidemenu": 1
+        }]
     },
     "extensionPackage": {}
 }
