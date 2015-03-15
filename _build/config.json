@@ -111,6 +111,11 @@
             "content_type": "text",            
             "richtext": 0,
             "published": 1            
+        }],
+        "systemSettings": [{
+            "key": "site_production",
+            "type": "combo-boolean",
+            "namespace": ""
         }]
     },
     "extensionPackage": {}
