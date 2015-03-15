@@ -84,6 +84,10 @@
                 "name": "Feed",
                 "file": "Feed.template.html",
                 "category" : "System"
+            },{
+                "name": "Error",
+                "file": "Error.template.html",
+                "category" : "System"
             }]            
         },
         "resources": [{
@@ -93,6 +97,12 @@
             "alias": "rss",
             "content_type": "XML",
             "published": 0,
+            "hidemenu": 1
+        },{
+            "pagetitle": "Error 404 - Not Found",
+            "template": "Error",        
+            "alias": "404-page-not-found",            
+            "published": 1,
             "hidemenu": 1
         }]
     },
