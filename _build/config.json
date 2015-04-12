@@ -67,6 +67,11 @@
                 "file": "microdata_organization.chunk.html",
                 "description": "Use with extra: \"ClientConfig\"",
                 "category" : "Utils"
+            },{
+                "name": "favicons",
+                "file": "favicons.chunk.html",
+                "description": "Favicon Cheat Sheet: https://github.com/audreyr/favicon-cheat-sheet",
+                "category" : "Base"
             }],
             "snippets": [{
                 "name": "getCopyrightYear",
@@ -87,11 +92,11 @@
                 "category" : "System"
             },{
                 "name": "Feed",
-                "file": "Feed.template.html",                
+                "file": "Feed.template.html",
                 "category" : "System",
                 "icon": "icon-rss"
             },{
-                "name": "Error",                
+                "name": "Error",
                 "file": "Error.template.html",
                 "category" : "System",
                 "icon": "icon-exclamation-triangle"
