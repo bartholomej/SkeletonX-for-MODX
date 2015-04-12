@@ -72,6 +72,14 @@
                 "file": "favicons.chunk.html",
                 "description": "Favicon Cheat Sheet: https://github.com/audreyr/favicon-cheat-sheet",
                 "category" : "Base"
+            },{
+                "name": "form_contact",
+                "file": "form_contact.chunk.html",
+                "category" : "Forms"
+            },{
+                "name": "form_contact-report",
+                "file": "form_contact-report.chunk.html",
+                "category" : "Forms"
             }],
             "snippets": [{
                 "name": "getCopyrightYear",

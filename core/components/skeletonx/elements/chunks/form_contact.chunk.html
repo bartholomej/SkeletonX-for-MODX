@@ -1,0 +1,104 @@
+[[!FormIt?
+   &hooks=`FormItSaveForm,email,redirect`
+   &emailTpl=`form_contact-report`
+   &emailSubject=`Contact from your website`
+   &emailTo=`info@website.tld`
+   &emailReplyTo=`[[+email]]`
+   &redirectTo=`69`
+   &validate=`name:required,
+      email:email:required,
+      text:stripTags`
+]]
+[[!+fi.successMessage]]
+[[!+fi.validation_error_message:notempty=`<p>[[!+fi.validation_error_message]]</p>`]]
+
+<form action="[[~[[*id]]]]" method="post" class="form">
+    <input type="hidden" name="nospam:blank" value="[[+fi.nospam]]" />
+ <fieldset>
+    <legend>Company</legend>
+        <div class="row">
+            <div class="medium-6 columns">
+                <label for="company">
+                    Company
+                </label>
+                <input type="text" name="company" id="company" placeholder="Company" value="[[!+fi.company]]" />
+                [[!+fi.error.company]]
+            </div>
+            <div class="medium-6 columns">
+                <label for="contact">
+                    Contact
+                </label>
+                <input type="text" name="contact" id="contact" placeholder="Contact" value="[[!+fi.contact]]" />
+                [[!+fi.error.contact]]
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="medium-6 columns">
+                <label for="country">
+                    Country
+                </label>
+                <select name="country">
+                    [[!FormItCountryOptions? &selected=`[[!+fi.country]]` &prioritized=`CZ,SK,DE,FR,AT`]]
+                </select>
+                <input type="text" name="country" id="country" placeholder="Country" value="[[!+fi.country]]" />
+                [[!+fi.error.country]]
+            </div>
+            <div class="medium-6 columns">
+                <label for="website">
+                    Website
+                </label>
+                <input type="text" name="website" id="website" placeholder="Website" value="[[!+fi.website]]" />
+                [[!+fi.error.website]]
+            </div>
+        </div>
+</fieldset>
+<fieldset>
+    <legend>Person</legend>
+    <div class="row">
+        <div class="medium-6 columns">
+            <label for="name">
+                Full name
+            </label>
+            <input type="text" name="name" id="name" placeholder="Full name" value="[[!+fi.name]]" />
+            [[!+fi.error.name]]
+        </div>
+        <div class="medium-6 columns">
+        <label for="email">
+            Email
+        </label>
+        <input type="text" name="email" id="email" placeholder="Email" value="[[!+fi.email]]" />
+        [[!+fi.error.email]]
+        </div>
+    </div>
+    <div class="row">
+        <div class="medium-6 columns">
+            <label for="position">
+                Position
+            </label>
+            <input type="text" name="position" id="position" placeholder="Position" value="[[!+fi.name]]" />
+            [[!+fi.error.name]]
+        </div>
+        <div class="medium-6 columns">
+        <label for="phone">
+            Phone
+        </label>
+        <input type="text" name="phone" id="phone" placeholder="Phone" value="[[!+fi.phone]]" />
+        [[!+fi.error.phone]]
+        </div>
+    </div>
+    <div class="row">
+        <div class="medium-12 columns">
+            <label for="text">
+                Comment
+            </label>
+            <textarea name="text" id="text" cols="55" rows="4" value="[[!+fi.text]]" placeholder="Comment">[[!+fi.text]]</textarea>
+            [[!+fi.error.text]]
+        </div>
+    </div>
+</fieldset>
+
+    <div class="form-buttons">
+        <input type="submit" class="button small right" value="Submit" />
+    </div>
+</form>
