@@ -69,8 +69,8 @@
                 "category" : "Utils"
             }],
             "snippets": [{
-                "name": "CopyrightYear",
-                "file": "CopyrightYear.snippet.php"
+                "name": "getCopyrightYear",
+                "file": "getCopyrightYear.snippet.php"
             },{
                 "name": "getActiveClass",
                 "file": "getActiveClass.snippet.php"
