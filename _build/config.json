@@ -9,7 +9,7 @@
             "id": 1
             ,"controller": "index"
         }],
-        "elements": {                    
+        "elements": {
             "categories": [{
                     "name": "Base"
                 },{
@@ -87,13 +87,15 @@
                 "category" : "System"
             },{
                 "name": "Feed",
-                "file": "Feed.template.html",
-                "category" : "System"
+                "file": "Feed.template.html",                
+                "category" : "System",
+                "icon": "icon-rss"
             },{
-                "name": "Error",
+                "name": "Error",                
                 "file": "Error.template.html",
-                "category" : "System"
-            }]            
+                "category" : "System",
+                "icon": "icon-exclamation-triangle"
+            }]
         },
         "resources": [{
             "pagetitle": "RSS Feed",
@@ -106,7 +108,7 @@
         },{
             "pagetitle": "Error 404 - Not Found",
             "template": "Error",
-            "alias": "404-page-not-found",            
+            "alias": "404-page-not-found",
             "published": 1,
             "hidemenu": 1
         },{
@@ -114,7 +116,7 @@
             "template": 0,
             "alias": "robots",
             "file": "robots.txt.html",
-            "content_type": "text",            
+            "content_type": "text",
             "richtext": 0,
             "published": 1,
             "hidemenu": 1
@@ -123,10 +125,10 @@
             "template": 0,
             "alias": "humans",
             "file": "humans.txt.html",
-            "content_type": "text",            
+            "content_type": "text",
             "richtext": 0,
             "published": 0,
-            "hidemenu": 1            
+            "hidemenu": 1
         }],
         "systemSettings": [{
             "key": "site_production",
