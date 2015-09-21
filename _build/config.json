@@ -152,5 +152,27 @@
             "type": "combo-boolean",
             "namespace": ""
         }]
-    }
+    },
+    "dependencies": [{
+        "name": "formit",
+        "version": ">=2.2.7"
+    },{
+        "name": "getresources",
+        "version": ">=1.6.1"
+    },{
+        "name": "queeg",
+        "version": ">=1.2.0"
+    },{
+        "name": "ace",
+        "version": ">=1.6.4"
+    },{
+        "name": "pthumb",
+        "version": ">=2.3.3"
+    },{
+        "name": "clientconfig",
+        "version": ">=1.3.1"
+    },{
+        "name": "tinymcerichtexteditor",
+        "version": ">=1.1.0"
+    }]
 }
