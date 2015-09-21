@@ -148,6 +148,5 @@
             "type": "combo-boolean",
             "namespace": ""
         }]
-    },
-    "extensionPackage": {}
+    }
 }
