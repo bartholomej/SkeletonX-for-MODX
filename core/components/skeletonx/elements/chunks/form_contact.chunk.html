@@ -1,13 +1,15 @@
 [[!FormIt?
-   &hooks=`FormItSaveForm,email,redirect`
-   &emailTpl=`form_contact-report`
-   &emailSubject=`Contact from your website`
+   &hooks=`FormItSaveForm,email,FormItAutoResponder,redirect`
+   &emailTpl=`form_contact.report`
+   &emailSubject=`Contact from your website [[++site_name]]`
    &emailTo=`info@website.tld`
    &emailReplyTo=`[[+email]]`
    &redirectTo=`69`
    &validate=`name:required,
       email:email:required,
       text:stripTags`
+   &fiarTpl =`form_contact.confirmation`
+   &fiarSubject =`Thank you for your interest ([[++site_name]])`
 ]]
 [[!+fi.successMessage]]
 [[!+fi.validation_error_message:notempty=`<p>[[!+fi.validation_error_message]]</p>`]]

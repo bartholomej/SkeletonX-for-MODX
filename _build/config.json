@@ -77,8 +77,12 @@
                 "file": "form_contact.chunk.html",
                 "category" : "Forms"
             },{
-                "name": "form_contact-report",
-                "file": "form_contact-report.chunk.html",
+                "name": "form_contact.report",
+                "file": "form_contact.report.chunk.html",
+                "category" : "Forms"
+            },{
+                "name": "form_contact.confirmation",
+                "file": "form_contact.confirmation.chunk.html",
                 "category" : "Forms"
             }],
             "snippets": [{
